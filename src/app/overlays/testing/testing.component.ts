@@ -593,7 +593,7 @@ export class TestingComponent implements OnInit {
     });
   }
 
-  spikeTimer?: NodeJS.Timeout;
+  spikeTimer?: ReturnType<typeof setTimeout>;
 
   plantSpike() {
     this.dataModel.match.update((v) => {
@@ -788,7 +788,7 @@ export class TestingComponent implements OnInit {
   }
   //#endregion
 
-  timeoutTimerRef?: NodeJS.Timeout;
+  timeoutTimerRef?: ReturnType<typeof setTimeout>;
   startTimeoutTimer() {
     this.timeoutTimerRef = setInterval(() => {
       this.dataModel.match.update((v) => {
